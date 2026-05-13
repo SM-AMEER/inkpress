@@ -633,7 +633,7 @@ function PostView({ post, posts, users, comments, currentUser, savePosts, saveCo
   };
 
   const deletePost = async () => {
-    if (!confirm("Delete this post?")) return;
+    if (!window.confirm("Delete this post?")) return;
     await savePosts(posts.filter(p => p.id !== post.id));
     setView("home"); showToast("Post deleted.");
   };
